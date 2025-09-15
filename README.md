@@ -1,10 +1,18 @@
-# AidPaike.github.io
-[![GitHub Streak](https://streak-stats.demolab.com?user=AidPaike&theme=dark&hide_border=true&border_radius=4.8&locale=zh_Hans&date_format=%5BY.%5Dn.j)](https://git.io/streak-stats)
+Hugo + Stack 主题站点
 
-[![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=AidPaike)](https://github.com/anuraghazra/github-readme-stats)
-[![trophy](https://github-profile-trophy.vercel.app/?username=AidPaike&theme=onedark)](https://github.com/ryo-ma/github-profile-trophy)
-![visitors](https://visitor-badge.glitch.me/badge?page_id=page.id&left_color=green&right_color=red)
+本仓库已迁移为 Hugo 源码结构，使用 [hugo-theme-stack](https://github.com/CaiJimmy/hugo-theme-stack) 主题，并通过 GitHub Actions 自动构建与部署到 GitHub Pages。
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=F729DE&center=true&width=435&lines=%E6%AF%8F%E5%A4%A9%E8%BF%9B%E6%AD%A5%E4%B8%80%E7%82%B9%E7%82%B9;have+a+nice+day)](https://git.io/typing-svg)
+本地开发：
 
-[![Ashutosh's github activity graph](https://github-readme-activity-graph.cyclic.app/graph?username=AidPaike&theme=github)](https://github.com/ashutosh00710/github-readme-activity-graph)
+1. 安装 Hugo Extended：`hugo version` 要显示 extended。
+2. 启动预览：`hugo server -D`。
+3. 新建文章：`hugo new posts/your-post.md`。
+
+部署：
+
+推送到 GitHub 后，Actions 会构建并发布到 Pages。首次需要在仓库 Settings -> Pages 中选择 "GitHub Actions" 作为来源。
+
+备份：
+
+之前站点静态文件已备份到仓库根目录下 `backup_pre_hugo_YYYYMMDD_HHMMSS/` 文件夹。
+

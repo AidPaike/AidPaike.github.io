@@ -1,0 +1,48 @@
+baseURL: "https://aidpaike.github.io/"
+languageCode: "zh-cn"
+title: "AidPaike Blog"
+theme: "hugo-theme-stack"
+
+paginate: 10
+enableRobotsTXT: true
+
+defaultContentLanguage: zh-cn
+hasCJKLanguage: true
+
+permalinks:
+  posts: "/posts/:slug/"
+
+params:
+  sidebar:
+    emoji: "📚"
+    subtitle: "记录与分享"
+  article:
+    math: false
+    readingTime: true
+  footer:
+    since: 2025
+  social:
+    - name: GitHub
+      icon: "brand-github"
+      url: "https://github.com/AidPaike"
+
+menu:
+  main:
+    - name: 主页
+      url: /
+      weight: 1
+    - name: 归档
+      url: /archives/
+      weight: 2
+    - name: 标签
+      url: /tags/
+      weight: 3
+    - name: 关于
+      url: /about/
+      weight: 4
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
