@@ -3,7 +3,8 @@ languageCode: "zh-cn"
 title: "AidPaike Blog"
 theme: "hugo-theme-stack"
 
-paginate: 10
+pagination:
+  pagerSize: 10
 enableRobotsTXT: true
 
 defaultContentLanguage: zh-cn
@@ -45,4 +46,3 @@ markup:
   goldmark:
     renderer:
       unsafe: true
-
