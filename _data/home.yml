@@ -29,7 +29,7 @@ zh:
   introduction:
     paragraphs:
       - "我于 2025 年开始在国防科技大学攻读网络空间安全专业博士学位。研究方向包括编译器模糊测试、软件测试、智能体安全和智能化软件工程。"
-      - "目前的工作主要关注从历史缺陷中提取可复用的触发片段，并通过测试用例合成与调度提高编译器缺陷发现效率。"
+      - "目前的工作主要聚焦智能体驱动的安全测试与攻防，研究智能体模糊测试、漏洞挖掘与防御、自动化渗透测试及其防御，以及智能体系统本身的安全性。"
   research:
     title: "研究方向"
     items:
@@ -100,7 +100,7 @@ en:
   introduction:
     paragraphs:
       - "I started my Ph.D. in Cyberspace Security at the National University of Defense Technology in 2025. My research interests include compiler fuzzing, software testing, agent security, and AI for software engineering."
-      - "My current work extracts reusable bug-triggering segments from historical defects and improves compiler bug discovery through test-case synthesis and scheduling."
+      - "My current work focuses on agent-driven security testing and cyber defense, including agentic fuzzing, vulnerability discovery and defense, automated penetration testing and corresponding defenses, and the security of agent systems themselves."
   research:
     title: "Research Interests"
     items:
