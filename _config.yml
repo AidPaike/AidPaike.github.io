@@ -1,124 +1,22 @@
 title: "Zhenye Fan"
 name: "Zhenye Fan"
-description: "Ph.D. Student at National University of Defense Technology"
+description: "Ph.D. Student in Cyberspace Security at National University of Defense Technology"
 url: "https://aidpaike.github.io"
 baseurl: ""
 repository: "AidPaike/AidPaike.github.io"
-
-# Site Author
-author:
-  name: "Zhenye Fan"
-  avatar: "profile.png"
-  bio: "Ph.D. Student at NUDT. Research interests: Compiler Fuzzing, Software Testing, AI4SE."
-  location: "Changsha, China"
-  employer: "National University of Defense Technology"
-  email: "zhenyefan@163.com"
-  github: "AidPaike"
-  googlescholar: "https://scholar.google.com/citations?hl=en&user=YsCItkMAAAAJ"
-
-# Publication Category
-publication_category:
-  conferences:
-    title: "Conference Papers"
-  journals:
-    title: "Journal Articles"
-
-# Site Settings
-teaser: 
-breadcrumbs: false
-words_per_minute: 160
-
-# Reading Files
-include:
-  - .htaccess
-  - _pages
-exclude:
-  - "*.sublime-project"
-  - "*.sublime-workspace"
-  - .asset-cache
-  - .bundle
-  - .jekyll-assets-cache
-  - .sass-cache
-  - Gemfile
-  - README
-  - tmp
-keep_files:
-  - .git
-  - .svn
+locale: "en-US"
+timezone: "Asia/Shanghai"
 encoding: "utf-8"
-markdown_ext: "markdown,mkdown,mkdn,mkd,md"
-
-# Conversion
 markdown: kramdown
-highlighter: rouge
-lsi: false
-excerpt_separator: "\n\n"
-incremental: false
 
-# Markdown Processing
-kramdown:
-  input: GFM
-  hard_wrap: false
-  auto_ids: true
-  footnote_nr: 1
-  entity_output: as_char
-  toc_levels: 1..6
-  smart_quotes: lsquo,rsquo,ldquo,rdquo
-  enable_coderay: false
+include:
+  - _pages
 
-# Sass/SCSS
-sass:
-  sass_dir: _sass
-  style: compressed
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - .bundle
 
-# Outputting
-permalink: /:categories/:title/
-timezone: Asia/Shanghai
-
-# Plugins
 plugins:
-  - jekyll-feed
-  - jekyll-gist
-  - jekyll-paginate
   - jekyll-sitemap
-  - jekyll-redirect-from
-
-# mimic GitHub Pages with --safe
-whitelist:
-  - jekyll-feed
-  - jekyll-gist
-  - jekyll-paginate
-  - jekyll-sitemap
-  - jekyll-redirect-from
-
-# HTML Compression
-compress_html:
-  clippings: all
-  ignore:
-    envs: development
-
-defaults:
-  - scope:
-      path: ""
-      type: posts
-    values:
-      layout: single
-      author_profile: true
-      read_time: true
-      comments: true
-      share: true
-      related: true
-  - scope:
-      path: ""
-      type: pages
-    values:
-      layout: single
-      author_profile: true
-  - scope:
-      path: ""
-      type: publications
-    values:
-      layout: single
-      author_profile: true
-      share: true
-

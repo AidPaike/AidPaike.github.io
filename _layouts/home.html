@@ -1,0 +1,318 @@
+{% assign page_data = site.data.home[page.lang] %}
+<!doctype html>
+<html lang="{{ page_data.html_lang }}" class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f3efe6">
+
+    <title>{{ page_data.seo.title }}</title>
+    <meta name="description" content="{{ page_data.seo.description }}">
+    <meta name="author" content="{{ page_data.profile.name }}">
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical" href="{{ page_data.self_url | absolute_url }}">
+    <link rel="alternate" hreflang="zh-CN" href="{{ '/' | absolute_url }}">
+    <link rel="alternate" hreflang="en" href="{{ '/en/' | absolute_url }}">
+    <link rel="alternate" hreflang="x-default" href="{{ '/' | absolute_url }}">
+
+    <meta property="og:type" content="profile">
+    <meta property="og:url" content="{{ page_data.self_url | absolute_url }}">
+    <meta property="og:title" content="{{ page_data.seo.title }}">
+    <meta property="og:description" content="{{ page_data.seo.description }}">
+    <meta property="og:image" content="{{ '/images/zhenye-fan.jpg' | absolute_url }}">
+    <meta property="og:site_name" content="{{ page_data.profile.name }}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=Noto+Serif+SC:wght@400;500;600;700&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ '/assets/css/home.css' | relative_url }}">
+
+    <link rel="icon" type="image/svg+xml" href="{{ '/images/favicon.svg' | relative_url }}">
+
+    <script>
+      document.documentElement.classList.remove('no-js');
+      document.documentElement.classList.add('js');
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfilePage",
+        "url": {{ page_data.self_url | absolute_url | jsonify }},
+        "mainEntity": {
+          "@type": "Person",
+          "name": {{ page_data.profile.name | jsonify }},
+          "alternateName": "Zhenye Fan",
+          "image": {{ '/images/zhenye-fan.jpg' | absolute_url | jsonify }},
+          "jobTitle": {{ page_data.profile.role | jsonify }},
+          "affiliation": {
+            "@type": "CollegeOrUniversity",
+            "name": "National University of Defense Technology"
+          },
+          "email": "mailto:zyfan@nudt.edu.cn",
+          "sameAs": [
+            "https://github.com/AidPaike",
+            "https://scholar.google.com/citations?hl=en&user=YsCItkMAAAAJ"
+          ],
+          "knowsAbout": [
+            "Compiler Fuzzing",
+            "Software Testing",
+            "Agent Security",
+            "AI for Software Engineering"
+          ]
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">{{ page_data.skip_label }}</a>
+    <div class="paper-grid" aria-hidden="true"></div>
+
+    <header class="site-header" data-site-header>
+      <div class="site-header__inner shell">
+        <a class="brand" href="{{ page_data.self_url | relative_url }}" aria-label="{{ page_data.brand_label }}">
+          <span class="brand__mark" aria-hidden="true">ZF</span>
+          <span class="brand__text">
+            <strong>{{ page_data.brand_label }}</strong>
+            <small>{{ page_data.brand_meta }}</small>
+          </span>
+        </a>
+
+        <button class="menu-button" type="button" aria-expanded="false" aria-controls="primary-navigation" data-menu-button>
+          <span class="sr-only">{{ page_data.menu_label }}</span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </button>
+
+        <nav class="site-nav" id="primary-navigation" aria-label="{{ page_data.navigation_label }}" data-navigation>
+          <div class="site-nav__links">
+            {% for item in page_data.navigation %}
+              <a href="{{ item.url }}" data-nav-link>{{ item.label }}</a>
+            {% endfor %}
+          </div>
+          <a class="language-switch" href="{{ page_data.alternate_url | relative_url }}" hreflang="{% if page.lang == 'zh' %}en{% else %}zh-CN{% endif %}" aria-label="{{ page_data.alternate_aria }}">
+            {{ page_data.alternate_label }}
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M6 4h6v6"/></svg>
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <div class="dossier shell">
+      <aside class="profile-rail" aria-label="{{ page_data.profile.name }}">
+        <div class="profile-card">
+          <div class="portrait-wrap">
+            <div class="portrait-offset" aria-hidden="true"></div>
+            <img class="portrait" src="{{ '/images/zhenye-fan.jpg' | relative_url }}" width="307" height="378" alt="{{ page_data.profile.portrait_alt }}" fetchpriority="high">
+            <span class="portrait-note">{{ page_data.profile.image_note }}</span>
+          </div>
+
+          <div class="profile-card__identity">
+            <h2>{{ page_data.profile.name }}</h2>
+            <p>{{ page_data.profile.role }} · {{ page_data.profile.major }}</p>
+          </div>
+
+          <dl class="profile-facts">
+            <div>
+              <dt>ORG</dt>
+              <dd>{{ page_data.profile.institution }}</dd>
+            </div>
+            <div>
+              <dt>LOC</dt>
+              <dd>{{ page_data.profile.location }}</dd>
+            </div>
+          </dl>
+
+          <div class="profile-links">
+            <a href="mailto:zyfan@nudt.edu.cn">
+              <span>{{ page_data.profile.email_label }}</span>
+              <svg viewBox="0 0 16 16" aria-hidden="true"><path d="m2.5 4 5.5 4 5.5-4M3 3.5h10a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-7a1 1 0 0 1 1-1Z"/></svg>
+            </a>
+            <a href="https://github.com/AidPaike" target="_blank" rel="noopener noreferrer">
+              <span>{{ page_data.profile.github_label }}</span>
+              <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M6 4h6v6"/></svg>
+            </a>
+            <a href="https://scholar.google.com/citations?hl=en&amp;user=YsCItkMAAAAJ" target="_blank" rel="noopener noreferrer">
+              <span>{{ page_data.profile.scholar_label }}</span>
+              <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M6 4h6v6"/></svg>
+            </a>
+          </div>
+        </div>
+      </aside>
+
+      <main class="main-column" id="main-content">
+        <section class="hero" aria-labelledby="hero-title">
+          <div class="hero__eyebrow load-in load-in--1">
+            <span class="signal-dot" aria-hidden="true"></span>
+            {{ page_data.hero.eyebrow }}
+          </div>
+          <h1 class="hero__title load-in load-in--2" id="hero-title">
+            {{ page_data.hero.title }}
+            <em>{{ page_data.hero.title_accent }}</em>
+          </h1>
+          <div class="hero__copy load-in load-in--3">
+            <p class="hero__intro">{{ page_data.hero.intro }}</p>
+            <p>{{ page_data.hero.detail }}</p>
+          </div>
+          <div class="question-card load-in load-in--4">
+            <span>{{ page_data.hero.question_label }}</span>
+            <p>{{ page_data.hero.question }}</p>
+          </div>
+          <a class="scroll-cue load-in load-in--4" href="#research">
+            <span>{{ page_data.hero.scroll_label }}</span>
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3v13m-5-5 5 5 5-5"/></svg>
+          </a>
+        </section>
+
+        <section class="content-section" id="research" aria-labelledby="research-title" data-section>
+          <header class="section-heading">
+            <span class="section-heading__number">{{ page_data.research.number }}</span>
+            <div>
+              <p>{{ page_data.research.kicker }}</p>
+              <h2 id="research-title">{{ page_data.research.title }}</h2>
+            </div>
+          </header>
+          <p class="section-intro">{{ page_data.research.intro }}</p>
+          <div class="research-grid">
+            {% for item in page_data.research.items %}
+              <article class="research-item">
+                <span class="research-item__code">{{ item.code }}</span>
+                <h3>{{ item.title }}</h3>
+                <p>{{ item.description }}</p>
+                <span class="research-item__line" aria-hidden="true"></span>
+              </article>
+            {% endfor %}
+          </div>
+        </section>
+
+        <section class="content-section" id="news" aria-labelledby="news-title" data-section>
+          <header class="section-heading">
+            <span class="section-heading__number">{{ page_data.news.number }}</span>
+            <div>
+              <p>{{ page_data.news.kicker }}</p>
+              <h2 id="news-title">{{ page_data.news.title }}</h2>
+            </div>
+          </header>
+          <div class="news-list">
+            {% for item in page_data.news.items %}
+              <a class="news-item" href="{{ item.url }}" target="_blank" rel="noopener noreferrer">
+                <time datetime="{{ item.date | replace: '.', '-' }}">{{ item.date }}</time>
+                <span>{{ item.text }}</span>
+                <svg viewBox="0 0 18 18" aria-hidden="true"><path d="M4 14 14 4M7 4h7v7"/></svg>
+              </a>
+            {% endfor %}
+          </div>
+        </section>
+
+        <section class="content-section publications-section" id="publications" aria-labelledby="publications-title" data-section>
+          <header class="section-heading">
+            <span class="section-heading__number">{{ page_data.publications.number }}</span>
+            <div>
+              <p>{{ page_data.publications.kicker }}</p>
+              <h2 id="publications-title">{{ page_data.publications.title }}</h2>
+            </div>
+          </header>
+          <div class="publications-intro">
+            <p class="section-intro">{{ page_data.publications.intro }}</p>
+            <span>{{ page_data.publications.author_note }}</span>
+          </div>
+
+          <div class="publication-list">
+            {% for publication in site.data.publications %}
+              <article class="publication">
+                <div class="publication__index" aria-hidden="true">{{ publication.index }}</div>
+                <div class="publication__body">
+                  <div class="publication__meta">
+                    <span>{{ publication.year }}</span>
+                    <span>{{ publication.venue }}</span>
+                    <span class="publication__badge">{% if page.lang == 'zh' %}{{ publication.note_zh }}{% else %}{{ publication.note_en }}{% endif %}</span>
+                  </div>
+                  <h3>{{ publication.title }}</h3>
+                  <p class="publication__authors">
+                    {% for author in publication.authors %}<span{% if author.self %} class="is-self"{% endif %}>{{ author.name }}</span>{% unless forloop.last %}, {% endunless %}{% endfor %}
+                  </p>
+                  <p class="publication__summary">{% if page.lang == 'zh' %}{{ publication.summary_zh }}{% else %}{{ publication.summary_en }}{% endif %}</p>
+                  <div class="publication__links" aria-label="{{ page_data.publications.links_label }}">
+                    {% for link in publication.links %}
+                      <a href="{{ link.url }}" target="_blank" rel="noopener noreferrer">
+                        {% case link.type %}
+                          {% when 'doi' %}{{ page_data.publications.doi_label }}
+                          {% when 'pdf' %}{{ page_data.publications.pdf_label }}
+                          {% when 'code' %}{{ page_data.publications.code_label }}
+                        {% endcase %}
+                        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M6 4h6v6"/></svg>
+                      </a>
+                    {% endfor %}
+                  </div>
+                </div>
+              </article>
+            {% endfor %}
+          </div>
+        </section>
+
+        <section class="content-section" id="experience" aria-labelledby="experience-title" data-section>
+          <header class="section-heading">
+            <span class="section-heading__number">{{ page_data.experience.number }}</span>
+            <div>
+              <p>{{ page_data.experience.kicker }}</p>
+              <h2 id="experience-title">{{ page_data.experience.title }}</h2>
+            </div>
+          </header>
+          <div class="timeline-list">
+            {% for item in page_data.experience.items %}
+              <article class="timeline-item">
+                <time>{{ item.period }}</time>
+                <div>
+                  <h3>{{ item.degree }}</h3>
+                  <p>{{ item.school }}</p>
+                </div>
+                {% if item.status != '' %}<span>{{ item.status }}</span>{% endif %}
+              </article>
+            {% endfor %}
+          </div>
+        </section>
+
+        <section class="content-section" id="honors" aria-labelledby="honors-title" data-section>
+          <header class="section-heading">
+            <span class="section-heading__number">{{ page_data.honors.number }}</span>
+            <div>
+              <p>{{ page_data.honors.kicker }}</p>
+              <h2 id="honors-title">{{ page_data.honors.title }}</h2>
+            </div>
+          </header>
+          <div class="honors-list">
+            {% for item in page_data.honors.items %}
+              <article class="honor-item">
+                <span class="honor-item__year">{{ item.year }}</span>
+                <div>
+                  <h3>{{ item.title }}</h3>
+                  <p>{{ item.detail }}</p>
+                </div>
+                <span class="honor-item__star" aria-hidden="true">✦</span>
+              </article>
+            {% endfor %}
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <footer class="site-footer">
+      <div class="site-footer__inner shell">
+        <span class="site-footer__mark" aria-hidden="true">ZF</span>
+        <div class="site-footer__contact">
+          <p>{{ page_data.footer.prompt }}</p>
+          <a href="mailto:zyfan@nudt.edu.cn">
+            {{ page_data.footer.email_label }}
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 15 15 5M8 5h7v7"/></svg>
+          </a>
+        </div>
+        <div class="site-footer__meta">
+          <p>© {{ site.time | date: '%Y' }} {{ page_data.footer.copyright }}</p>
+          <p>{{ page_data.footer.colophon }}</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="{{ '/assets/js/home.js' | relative_url }}" defer></script>
+  </body>
+</html>
