@@ -24,7 +24,6 @@
 | `_pages/about.md` | 中文主页入口 |
 | `_pages/home-en.md` | 英文主页入口 |
 | `assets/css/home.css` | 页面视觉与响应式样式 |
-| `assets/js/home.js` | 导航与页面交互 |
 | `images/zhenye-fan.jpg` | 个人照片 |
 
 ## 本地预览
