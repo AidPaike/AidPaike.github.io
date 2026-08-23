@@ -286,16 +286,27 @@ img {
   padding-block: 4px;
 }
 
-.profile__links a::before {
-  width: 4px;
-  height: 4px;
-  border: 1px solid var(--accent);
-  content: "";
-  transition: background 140ms ease;
+.profile__icon {
+  flex: 0 0 auto;
+  width: 14px;
+  height: 14px;
+  color: var(--muted);
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.55;
+  transition: color 140ms ease, transform 140ms ease;
 }
 
-.profile__links a:hover::before {
-  background: var(--accent);
+.profile__icon--fill {
+  fill: currentColor;
+  stroke: none;
+}
+
+.profile__links a:hover .profile__icon {
+  color: var(--accent);
+  transform: translateX(1px);
 }
 
 .content-column {
@@ -668,9 +679,9 @@ img {
     gap: 7px;
   }
 
-  .profile__links a::before {
-    width: 3px;
-    height: 3px;
+  .profile__icon {
+    width: 13px;
+    height: 13px;
   }
 
   .page-section {
